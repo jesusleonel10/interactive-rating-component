@@ -9,6 +9,7 @@ html, body {
     font-family: 'Overpass', sans-serif;
     font-size: 16px;
     height: 100%;
+    user-select: none;
 }
 main {
     height:100%;
@@ -29,7 +30,7 @@ main {
     margin: 0 auto;
     min-width: 18rem;
     max-width: 23rem;
-    height: 24rem;
+    max-height: 25rem;
     border-radius: 1rem;
     padding: 2rem;
 }
@@ -72,6 +73,28 @@ p {
     justify-content: space-between;
 }
 
+.rating__required {
+    color: crimson;
+    text-align: center;
+    margin: -.8rem;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    transition: all .5s linear;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    padding: .1rem 0;
+    transition: all .5s linear;
+}
+
 .rating__number {
     display: flex;
     justify-content: center;
@@ -112,6 +135,11 @@ button {
     letter-spacing: .1rem;
     cursor: pointer;
     transition: all .1s ease-in;
+    
+}
+
+button.animate {
+    animation: required .2s both;
 }
 
 button:hover {
@@ -148,4 +176,28 @@ button:hover {
 .thank-you p,
 .thank-you h3 {
     text-align: center;
+}
+
+@keyframes required {
+    0% {
+        transform: translate(5px);
+    }
+    30% {
+        transform: translate(10px);
+    }
+    40% {
+        transform: translate(15px);
+    }
+    50% {
+        transform: translate(-5px);
+    }
+    65% {
+        transform: translate(-10px);
+    }
+    75% {
+        transform: translate(-15px);
+    }
+    100% {
+        transform: translate(0);
+    }
 }

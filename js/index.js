@@ -3,6 +3,7 @@ const starsNumbers = document.querySelectorAll(".rating__number")
 const starsSelected = document.getElementById("stars_selected")
 const ratingBox = document.getElementsByClassName("rating")[0]
 const thanksBox = document.getElementsByClassName("thank-you")[0]
+const required = document.getElementsByClassName("rating__required")[0]
 
 const arr = [...starsNumbers]
 arr.forEach((element, index) => {
@@ -23,6 +24,7 @@ arr.forEach((element, index) => {
     })
 })
 
+
 submit.addEventListener("click", () => {
     arr.forEach((element, index) => {
         if (element.classList.contains("rating__active")) {
@@ -30,6 +32,15 @@ submit.addEventListener("click", () => {
             starsSelected.innerHTML = number
             ratingBox.style.display = "none"
             thanksBox.style.display = "flex"
+        } else {
+            required.classList.remove("hidden")
+            required.classList.add("show")
+            submit.classList.remove("animate")
+            setTimeout(() => submit.classList.add("animate"), 100)
+            setTimeout(() => {
+                required.classList.remove("show")
+                required.classList.add("hidden")
+            }, 2000)
         }
     })
 })
