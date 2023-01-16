@@ -26,17 +26,22 @@ main {
 }
 
 .content {
+    position: relative;
     background-color: #1f2630;
     margin: 0 auto;
     min-width: 18rem;
     max-width: 23rem;
     max-height: 25rem;
+    min-height: 24rem;
     border-radius: 1rem;
     padding: 2rem;
 }
 
 .rating {
     display: flex;
+    position: absolute;
+    left: 32px;
+    right: 32px;
     gap: 1.5rem;
     flex-direction: column;
     transition: all .1s ease-in;
@@ -70,32 +75,17 @@ p {
 
 .rating__value {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.rating__value fieldset {
+    all: unset;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
-
-.rating__required {
-    color: crimson;
-    text-align: center;
-    margin: -.8rem;
-}
-
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
-    padding: 0;
-    transition: all .5s linear;
-}
-
-.show {
-    visibility: visible;
-    opacity: 1;
-    height: auto;
-    padding: .1rem 0;
-    transition: all .5s linear;
-}
-
-.rating__number {
+.rating__btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,15 +101,44 @@ p {
     transition: all .1s ease-in;
 }
 
-.rating__number:hover {
+.rating__value label:hover {
     background-color: hsl(217, 12%, 63%);
     color: hsl(0, 0%, 100%);
+}
+.rating__number {
+    visibility: hidden;
+    position: absolute;
+}
+
+.rating__value legend {
+    visibility: hidden;
+    height: 0;
+}
+
+.rating__required {
+    color: crimson;
+    text-align: center;
+    margin: -1rem;
 }
 
 .rating__active,
 .rating__active:hover {
     background-color: hsl(25, 97%, 53%);
     color: hsl(0, 0%, 100%);
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: auto;
+    transition: all .5s linear;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    transition: all .5s linear;
 }
 
 button {
@@ -148,7 +167,10 @@ button:hover {
 }
 
 .thank-you {
-    display: none;
+    display: flex;
+    position: absolute;
+    left: 32px;
+    right: 32px;
     flex-direction: column;
     gap: 1.5rem;
 }

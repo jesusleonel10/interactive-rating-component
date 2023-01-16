@@ -12,9 +12,9 @@
   <main>
     <div class="container">
       <div class="content">
-        <div class="rating">
+        <div class="rating show">
           <div class="rating__img">
-            <img src="./images/icon-star.svg" alt="star icon">
+            <img src="./images/icon-star.svg" alt="">
           </div>
   
           <h3 class="rating__title">How did we do?</h3>
@@ -23,21 +23,36 @@
             Please let us know how we did with your support request. All feedback is appreciated 
             to help us improve our offering!
           </p>
-  
-          <div class="rating__value">
-            <span class="rating__number">1</span>
-            <span class="rating__number">2</span>
-            <span class="rating__number">3</span>
-            <span class="rating__number">4</span>
-            <span class="rating__number">5</span>
-          </div>
+          <form class="rating__value">
+            <fieldset>
+              <legend>Select Score</legend>
+              <label class="rating__btn" for="1">
+                1
+                <input class="rating__number" id="1" type="radio" name="score" value="1">
+              </label>
+              <label class="rating__btn" for="2">
+                2
+                <input class="rating__number" id="2" type="radio" name="score" value="2">
+              </label>
+              <label class="rating__btn" for="3">
+                3
+                <input class="rating__number" id="3" type="radio" name="score" value="3">
+              </label>
+              <label class="rating__btn" for="4">
+                4
+                <input class="rating__number" id="4" type="radio" name="score" value="4">
+              </label>
+              <label class="rating__btn" for="5">
+                5
+                <input class="rating__number" id="5" type="radio" name="score" value="5">
+              </label>
+            </fieldset>
 
-          <div class="rating__required hidden">Please select a score</div>
-
-          <button class="submit" id="submit">Submit</button>
+            <button type="submit" class="submit" id="submit">Submit</button>
+          </form>
         </div>
 
-        <div class="thank-you">
+        <div class="thank-you hidden">
           <div class="thank-you__img">
             <img src="./images/illustration-thank-you.svg" alt="">
           </div>
